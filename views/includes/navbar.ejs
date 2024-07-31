@@ -1,0 +1,174 @@
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand " href="/listings"><i class="fa-brands fa-behance icon"></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="/listings">Explore</a>
+                
+
+
+            </div> -->
+
+        <style>
+            @media screen and (max-width: 80px) {
+                .hide {
+                    display: none;
+
+                }
+            }
+
+            
+
+            .explore {
+                background-color: #AD88C6 !important;
+                border: none !important;
+                opacity: .8;
+            }
+
+            .explore:hover {
+                opacity: 10 !important;
+                color: rgb(250, 250, 251) !important;
+                cursor: pointer;
+
+                font-size: 1.1rem;
+                transition: step-start;
+            }
+
+            .search {
+               border-radius: .8rem;
+               /* padding-left: 4rem; */
+
+            }
+            .btn-search{
+                display: flex !important;
+                justify-content: space-around !important;
+                align-items: center;
+                text-align: center;
+                border-radius: .8rem;
+                margin-right: .5rem;
+
+            }
+        </style>
+
+
+
+        <ul class="nav nav-tabs explore ">
+            <li class="nav-item collapse navbar-collapse  ml-3">
+                <a class="nav-link active explore" aria-current="page" href="/listings">Explore</a>
+            </li>
+            <% if(currUser){ %>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle explore" data-bs-toggle="dropdown" role="button"
+                    aria-expanded="false"> Place Category</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/mountain">Mountain</a></li>
+                    <li><a class="dropdown-item" href="/beach">Beach</a></li>
+                    <li><a class="dropdown-item" href="/pool">Pool</a></li>
+                    <li><a class="dropdown-item" href="/boutiquehotel">Boutique Hotel</a></li>
+                    <li><a class="dropdown-item" href="/villa">Villa</a></li>
+                    <li><a class="dropdown-item" href="/tent">Tent</a></li>
+                    <li><a class="dropdown-item" href="/igloo">Igloo</a></li>
+                    <li><a class="dropdown-item" href="/room">Room</a></li>
+                </ul>
+            </li>
+            <% } %>
+
+        </ul>
+
+
+        <!-- <nav class="navbar bg-body-tertiary"> -->
+            <% if(currUser){ %>
+        <div class="container-fluid  col-4">
+            <form class="d-flex" method="GET" action="/country" role="search">
+                <input class="form-control search me-2" type="search" placeholder="Search Destination" name="listing[country]">
+                <button class="btn btn-search btn-success ml-3" type="submit"><i class="fa-solid fa-magnifying-glass btn-search mr-3"></i>Search</button>
+            </form>
+        </div>
+        <% } %>
+        <!-- </nav> -->
+
+
+        <!--  -->
+
+        <!-- <div class="filters">
+                <a href="/boutiquehotel">
+                    <div class="filter">
+                        <div><i class="fa-solid fa-hotel"></i></div>
+                        <p>Boutique Hotel</p>
+                    </div>
+                </a>
+                <a href="/villa">
+                    <div class="filter">
+                        <div> <i class="fa-solid fa-mountain-city"></i></div>
+                        <p>Villa</p>
+                    </div>
+                </a>
+                <a href="/room">
+                    <div class="filter">
+                        <div> <i class="fa-solid fa-bed-pulse"></i></div>
+                        <p>Room</p>
+                    </div>
+                </a>
+                <a href="/igloo">
+                    <div class="filter">
+                        <div><i class="fa-solid fa-igloo"></i></div>
+                        <p>Igloo</p>
+                    </div>
+                </a>
+                <a href="/pool">
+                <div class="filter">
+                    <div><i class="fa-solid fa-water-ladder"></i></div>
+                    <p>Pool</p>
+                </div>
+                </a>
+                <a href="/tent">
+                <div class="filter">
+                    <div><i class="fa-solid fa-campground"></i></div>
+                    <p>Tent</p>
+                </div>
+                </a>
+                <a href="/beach">
+                <div class="filter">
+                    <div><i class="fa-solid fa-umbrella-beach"></i></div>
+                    <p>Beach</p>
+                </div>
+                </a>
+                <a href="/mountain">
+                    <div class="filter">
+                        <div><i class="fa-solid fa-mountain"></i></div>
+                        <p>Mountain</p>
+                    </div>
+                </a>
+        
+        
+        
+            </div> -->
+
+
+
+
+
+
+
+
+
+
+        <div class=" nav-hide navbar-nav ms-auto">
+            <a class="nav-link" href="/listings/new">Add Your Place</a>
+            <% if(!currUser){ %>
+                <a class="nav-link" aria-current="page" href="/signup"><b>Sign up</b></a>
+                <a class="nav-link" href="/login"><b>Log in</b></a>
+
+                <%} %>
+                    <% if(currUser){ %>
+                        <a class="nav-link" href="/logout"><b>Log out</b></a>
+                        <%} %>
+
+        </div>
+    </div>
+    </div>
+</nav>

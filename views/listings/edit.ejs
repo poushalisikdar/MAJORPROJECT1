@@ -1,0 +1,96 @@
+<% layout("/layouts/boilerplate")%>
+
+    <body>
+
+        <form method="POST" action="/listings/<%=listings._id%>?_method=PUT"class="row g-3 needs-validation" novalidate enctype="multipart/form-data"><br>
+            <div class="row mt-3">
+                <div class="col-8 offset-2">
+
+                    <h2>Edit your listings</h2>
+
+                    <div class="mb-3">
+                        <label for="title" class="form-label">title</label>
+                        <input name="listing[title]" value="<%=listings.title %>" type="text" class="form-control"
+                            required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="title" class="form-label">description</label>
+                        <textarea name="listing[description]" cols="30" rows="6" type="text" class="form-control"
+                            required><%=listings.description%></textarea>
+
+                        <div class="invalid-feedback">
+                            Enter short description!
+                        </div>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <img src="<%=resizedImgUrl%>" alt="">
+
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="title" class="form-label"> Change Image</label>
+                        <input name="listing[image]"  type="file" class="form-control">
+                        <div class="valid-feedback">
+                            Upload image!
+                        </div>
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">price</label>
+                        <input name="listing[price]" value=" <%=listings.price %>" type="number" class="form-control"
+                            required>
+                        <div class="invalid-feedback">
+                            Please provide price.
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="mb-3 col-md-4">
+                            <label for="country" class="form-label">country</label>
+                            <input name="listing[country]" value="<%=listings.country %>" type="text"
+                                class="form-control" required>
+                                 
+                            <div class="invalid-feedback">
+                                Please provide a valid country name.
+                              </div>
+                        </div>
+                        <div class="mb-3 col-md-8">
+                            <label for="location" class="form-label">location</label>
+                            <input name="listing[location]" value="<%=listings.location%>" type="text"
+                                class="form-control" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid location.
+                                  </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Place Category</label>
+                            <select class="form-select form-control" aria-label="Default select example" name="listing[category]">
+                               
+    
+                                <option value="Boutique Hotel">Boutique Hotel</option>
+                                <option value="Villa">Villa</option>
+                                <option value="Room">Room</option>
+                                <option value="Igloo">Igloo</option>
+                                <option value="Pool">Pool</option>
+                                <option value="Tent">Tent</option>
+                                <option value="Beach">Beach</option>
+                                <option value="Mountain">Mountain</option>
+                            </select>
+                            <div class="valid-feedback">
+                               Please provide the place category.
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button class=" btn btn-primary">Edit</button>
+        </form>
+        </div>
+        </div>
+    </body>
